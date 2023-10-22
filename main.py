@@ -20,7 +20,7 @@ elif operacion == 1:
     money = float(input("¿Cuánto dinero quieres retirar?"))
 
     account.take_money(money)
-    print(f"¡Hecho!, ahora hay {account.get_balance()}€ en tu cuenta")
+    print(f"¡Hecho!, ahora hay {account.get_balance()}€ en tu cuenta. Tu cuenta está en números rojos.")
     print(f"La cuenta con número: {account.get_account_number()} tiene {account.get_balance()}€ en su balance")
 
 else:

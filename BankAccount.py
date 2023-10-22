@@ -21,3 +21,11 @@ bank_account1 = BankAccount("ES12345678912345")
 
 bank_account1.add_funds(-250)
 bank_account1.add_funds(761)
+
+class SavingAccount(BankAccount):
+    def__init__(self,account_number, balance = 0):
+        super().__init__(account,number,balance)
+        self.interest_rate = 5
+
+    def interests_generated(self,months9):
+        interest = self.balance * self:
