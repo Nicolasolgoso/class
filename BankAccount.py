@@ -16,10 +16,27 @@ class BankAccount:
     
         return self.balance
 
+class SavingAccount(BankAccount):
 
-bank_account1 = BankAccount("ES12345678912345")
+    def  __init__(self,account_number, balance, interest_rate):
+        super().__init__(account_number, balance)
+        self.interest_rate = interest_rate
 
-bank_account1.add_funds(-250)
-bank_account1.add_funds(761)
+    def generate_interest(self, time_period):
+        interest = (self.balance * self.interest_rate * time_period) / 12
+        self.add_funds(interest)
+        return interest
+
+class CheckingAccount(BankAccount):
+    def __init__(self, account_number, balance, overdraft_limit):
+        super().__init__(account_number, balance)
+        self.overdraft_limit = overdraft_limit
+
+    def take_money(self, money):
+        if money <= self.balance + self.overdraft_limit:
+            self.balance -= money
+        else:
+            print("Exceeded overdraft limit")
+
 
 
